@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RollActivity">
+
+    <LinearLayout
+        android:id="@+id/linear"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:padding="20dp"
+        app:layout_constraintVertical_weight="1"
+        app:layout_constraintBottom_toTopOf="@id/numpad"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/expression"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:layout_constraintLeft_toLeftOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id = "@+id/total"
+            android:minWidth="75dp"
+            android:paddingLeft="20dp"
+            app:layout_constraintLeft_toRightOf="@id/expression"
+            app:layout_constraintRight_toRightOf="parent" />
+    </LinearLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/numpad"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/roll"
+        app:layout_constraintVertical_weight="4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linear">
+
+        <Button
+            android:id="@+id/num1"
+            style="@style/NumberButton"
+            android:text="1"
+            android:tag="1"
+            app:layout_constraintHorizontal_weight="4"
+            app:layout_constraintBottom_toTopOf="@id/num4"
+            app:layout_constraintEnd_toStartOf="@id/num2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/num2"
+            style="@style/NumberButton"
+            android:text="2"
+            app:layout_constraintHorizontal_weight="4"
+            app:layout_constraintBottom_toTopOf="@id/num5"
+            app:layout_constraintEnd_toStartOf="@id/num3"
+            app:layout_constraintStart_toEndOf="@id/num1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/num3"
+            style="@style/NumberButton"
+            android:text="3"
+            app:layout_constraintHorizontal_weight="4"
+            app:layout_constraintBottom_toTopOf="@id/num6"
+            app:layout_constraintEnd_toStartOf="@id/d4"
+            app:layout_constraintStart_toEndOf="@id/num2"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/num4"
+            style="@style/NumberButton"
+            android:text="4"
+            app:layout_constraintHorizontal_weight="4"
+            app:layout_constraintBottom_toTopOf="@id/num7"
+            app:layout_constraintEnd_toStartOf="@id/num5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/num1" />
+
+        <Button
+            android:id="@+id/num5"
+            style="@style/NumberButton"
+            android:text="5"
+            app:layout_constraintHorizontal_weight="4"
+            app:layout_constraintBottom_toTopOf="@id/num8"
+            app:layout_constraintEnd_toStartOf="@id/num6"
+            app:layout_constraintStart_toEndOf="@id/num4"
+            app:layout_constraintTop_toBottomOf="@id/num2" />
+
+        <Button
+            android:id="@+id/num6"
+            style="@style/NumberButton"
+            android:text="6"
+            app:layout_constraintHorizontal_weight="4"
+            app:layout_constraintBottom_toTopOf="@id/num9"
+            app:layout_constraintEnd_toStartOf="@id/d8"
+            app:layout_constraintStart_toEndOf="@id/num5"
+            app:layout_constraintTop_toBottomOf="@id/num3" />
+
+        <Button
+            android:id="@+id/num7"
+            style="@style/NumberButton"
+            android:text="7"
+            app:layout_constraintHorizontal_weight="4"
+            app:layout_constraintBottom_toTopOf="@id/minus"
+            app:layout_constraintEnd_toStartOf="@id/num8"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/num4" />
+
+        <Button
+            android:id="@+id/num8"
+            style="@style/NumberButton"
+            android:text="8"
+            app:layout_constraintHorizontal_weight="4"
+            app:layout_constraintBottom_toTopOf="@id/num0"
+            app:layout_constraintEnd_toStartOf="@id/num9"
+            app:layout_constraintStart_toEndOf="@id/num7"
+            app:layout_constraintTop_toBottomOf="@id/num5" />
+
+        <Button
+            android:id="@+id/num9"
+            style="@style/NumberButton"
+            android:text="9"
+            app:layout_constraintHorizontal_weight="4"
+            app:layout_constraintBottom_toTopOf="@+id/plus"
+            app:layout_constraintEnd_toStartOf="@id/d12"
+            app:layout_constraintStart_toEndOf="@id/num8"
+            app:layout_constraintTop_toBottomOf="@id/num6" />
+
+        <Button
+            android:id="@+id/minus"
+            style="@style/NumberButton"
+            android:text="-"
+            app:layout_constraintHorizontal_weight="4"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/num0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/num7" />
+
+        <Button
+            android:id="@+id/plus"
+            style="@style/NumberButton"
+            android:text="+"
+            app:layout_constraintHorizontal_weight="4"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/d100"
+            app:layout_constraintStart_toEndOf="@id/num0"
+            app:layout_constraintTop_toBottomOf="@id/num9" />
+
+        <Button
+            android:id="@+id/num0"
+            style="@style/NumberButton"
+            android:text="0"
+            app:layout_constraintHorizontal_weight="4"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/plus"
+            app:layout_constraintStart_toEndOf="@id/minus"
+            app:layout_constraintTop_toBottomOf="@id/num8" />
+
+        <Button
+            android:id="@+id/d4"
+            style="@style/DieButton"
+            android:text="d4"
+            app:layout_constraintHorizontal_weight="4"
+            app:layout_constraintStart_toEndOf="@id/num3"
+            app:layout_constraintEnd_toStartOf="@id/d6"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/d8"/>
+
+        <Button
+            android:id="@+id/d6"
+            style="@style/DieButton"
+            android:text="d6"
+            app:layout_constraintHorizontal_weight="4"
+            app:layout_constraintStart_toEndOf="@id/d4"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/d10"/>
+
+        <Button
+            android:id="@+id/d8"
+            style="@style/DieButton"
+            android:text="d8"
+            app:layout_constraintHorizontal_weight="4"
+            app:layout_constraintStart_toEndOf="@id/num6"
+            app:layout_constraintEnd_toStartOf="@id/d10"
+            app:layout_constraintTop_toBottomOf="@id/d4"
+            app:layout_constraintBottom_toTopOf="@id/d12"/>
+
+        <Button
+            android:id="@+id/d10"
+            style="@style/DieButton"
+            android:text="d10"
+            app:layout_constraintHorizontal_weight="4"
+            app:layout_constraintStart_toEndOf="@id/d8"
+            app:layout_constraintTop_toBottomOf="@id/d6"
+            app:layout_constraintBottom_toTopOf="@id/d20"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <Button
+            android:id="@+id/d12"
+            style="@style/DieButton"
+            android:text="d12"
+            app:layout_constraintHorizontal_weight="4"
+            app:layout_constraintStart_toEndOf="@id/num9"
+            app:layout_constraintTop_toBottomOf="@id/d8"
+            app:layout_constraintBottom_toTopOf="@id/d100"
+            app:layout_constraintEnd_toStartOf="@id/d20"/>
+
+        <Button
+            android:id="@+id/d20"
+            style="@style/DieButton"
+            android:text="d20"
+            app:layout_constraintHorizontal_weight="4"
+            app:layout_constraintStart_toEndOf="@id/d12"
+            app:layout_constraintTop_toBottomOf="@id/d10"
+            app:layout_constraintBottom_toTopOf="@id/clear"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <Button
+            android:id="@+id/d100"
+            style="@style/DieButton"
+            android:text="d100"
+            app:layout_constraintHorizontal_weight="4"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/clear"
+            app:layout_constraintStart_toEndOf="@id/plus"
+            app:layout_constraintTop_toBottomOf="@id/d12" />
+
+        <Button
+
+            style="@style/DieButton"
+            android:id = "@+id/clear"
+            android:text="clear"
+            android:textAllCaps="true"
+            app:layout_constraintHorizontal_weight="4"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/d100"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/d20"/>
+    </android.support.constraint.ConstraintLayout>
+    <Button
+        android:id="@+id/roll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/numpad"
+        android:text="roll"/>
+</android.support.constraint.ConstraintLayout>
