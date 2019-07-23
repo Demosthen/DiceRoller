@@ -130,7 +130,7 @@ public class RollActivity extends AppCompatActivity {
     }
     public Pair<Long, String > evalGroup(String group){
         long coeff = 1;
-        long num = 1;
+        long num = 0;
         StringBuilder results = new StringBuilder("");
         while(group.length()>0){
             if(Character.isDigit(group.charAt(0))){
